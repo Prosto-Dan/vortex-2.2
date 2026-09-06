@@ -131,17 +131,8 @@ sv2v()
 
 yosys()
 {
-    case $OSVERSION in
-    "centos/7") parts=$(eval echo {a..a}) ;;
-    *)          parts=$(eval echo {a..a}) ;;
-    esac
-    echo $parts
-    rm -f yosys.tar.bz2.parta*
-    for x in $parts
-    do
-        wget $REPOSITORY/yosys/$OSVERSION/yosys.tar.bz2.parta$x
-    done
-    cat yosys.tar.bz2.parta* > yosys.tar.bz2
+    wget $REPOSITORY/yosys/$OSVERSION/yosys.tar.bz2.partaa
+    cat yosys.tar.bz2.partaa > yosys.tar.bz2
     tar -xvf yosys.tar.bz2
     mkdir -p $TOOLDIR && rm -rf $TOOLDIR/yosys && mv yosys $TOOLDIR
     rm -rf yosys yosys.tar.bz2*
